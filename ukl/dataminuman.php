@@ -48,8 +48,8 @@
     </head> 
     <body>
     <div class="servicess">
-        <a href="login2.php" class="learn-isi"><button>Back</button></a>
-        <a href="datamakanan.php" class="learn-isi"><button>Next</button></a>
+        <a href="datamakanan.php" class="learn-isi"><button>Back</button></a>
+        <a href="tambahminuman.php" class="learn-isi"><button>Add</button></a>
         <a href="home.php" class="learn-isi"><button>Home</button></a>
     </div>
     <h3 class="judul">DATA USER</h3>
@@ -58,23 +58,29 @@
     <table border="1">   
     <tr>
         <th>id</th>
-        <th>username</th>
-        <th>email</th>
+        <th>nama minuman</th>
+        <th>asal</th>
+        <th>deskripsi</th>
+        <th>foto</th>
+        <th>harga</th>
         <th colspan="2">Action</th>            
     </tr>
     </div>
 <?php
 include 'koneksi.php';
-$result = mysqli_query($mysqli, "SELECT * FROM user") or die (mysqli_error());
+$result = mysqli_query($mysqli, "SELECT * FROM minuman") or die (mysqli_error());
 while($data = mysqli_fetch_array($result)){
     ?>
     <tr>
-        <td><?php echo $data['id_user']; ?></td>
-        <td><?php echo $data['username']; ?></td>
-        <td><?php echo $data['email']; ?></td>
-        <td><a href='editdatauser.php?Id=<?php echo $data['id_user'];?>'>Edit</a></td>
+        <td><?php echo $data['id_minuman']; ?></td>
+        <td><?php echo $data['nama_minuman']; ?></td>
+        <td><?php echo $data['asal_minuman']; ?></td>
+        <td><?php echo $data['deskripsi']; ?></td>
+        <td><?php echo $data['foto']; ?></td>
+        <td><?php echo $data['harga_minuman']; ?></td>
+        <td><a href='editdatauser.php?Id=<?php echo $data['id_minuman'];?>'>Edit</a></td>
         <?php  ?>
-        <td><a href='deleteuser.php?Id=<?php echo $data['id_user'];?>'>Hapus</a></td>
+        <td><a href='deleteuser.php?Id=<?php echo $data['id_minuman'];?>'>Hapus</a></td>
         <?php 
     }
     ?>

@@ -2,17 +2,17 @@
 // deleteuser.php
 include 'koneksi.php';
 
-if (isset($_GET['Id'])) {
-    $id_user = $_GET['Id'];
+if (isset($_GET['id'])) {
+    $id_user = $_GET['id'];
 
     // SQL query to delete the user
-    $query = "DELETE FROM user WHERE id_user = $id_user";
+    $query = "DELETE FROM makanan2 WHERE id_makanan = $id_user";
 
     // Execute the query
     if (mysqli_query($mysqli, $query)) {
         echo "User deleted successfully.";
         // Redirect to the user list page after deletion
-        header("Location: tabeluser.php");
+        header("Location: datamakanan.php");
         exit();
     } else {
         echo "Error deleting user: " . mysqli_error($mysqli);

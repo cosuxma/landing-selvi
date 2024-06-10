@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+ <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login</title>
@@ -61,7 +61,6 @@
 </style>
 </head>
 <body>
-
 <div class="login-box">
     <h2>Log-in</h2>
     <form action="koneksilogin2.php" method="post">
@@ -72,6 +71,5 @@
         <p>belom punya akun? <a href="register2.php"> Yuk daftar</a></p></div>
     </form>
 </div>
-
 </body>
 </html>

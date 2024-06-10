@@ -24,13 +24,15 @@
         <div style="text-align: center;" class="container">
             <h2>Tentang Kami</h2>
             <p> Selamat datang di LiveHealthy sumber terpercaya anda untuk Pengolahan Makanan Nabati.
-                Di sini, kami berdedikasi untuk menyediakan informasi, resep, dan teknik terbaik dalam pengolahan makanan nabati.
-                Temukan cara mengubah bahan-bahan alami menjadi hidangan lezat yang sehat dan penuh gizi. Apakah Anda seorang profesional kuliner, pecinta masakan, atau baru memulai perjalanan menuju gaya hidup sehat, kami hadir untuk membantu Anda menciptakan kreasi kuliner nabati yang menginspirasi. Mari jelajahi dunia kuliner nabati bersama-sama dan ciptakan makanan yang tidak hanya baik untuk tubuh, tetapi juga untuk planet kita!
+                Di sini, kami berdedikasi untuk menyediakan informasi, resep, teknik terbaik dalam pengolahan makanan nabati.
+                Dan kami menjual makanan, minuman yang terbuat dari bahan utama nabati. 
+                Temukan cara mengubah bahan-bahan alami menjadi hidangan lezat yang sehat dan penuh gizi. Apakah Anda seorang profesional kuliner, pecinta masakan, atau baru memulai perjalanan menuju gaya hidup sehat, kami hadir untuk membantu Anda menciptakan kreasi kuliner nabati yang menginspirasi. Mari jelajahi dunia kuliner nabati bersama-sama dan ciptakan makanan yang tidak hanya baik untuk tubuh, 
+                tetapi juga untuk planet kita!
             </p>
     </section>
 
     <section id="contact" class="contact">
-        <div class="container">
+        <div style="text-align: center; "class="container">
             <h2>Kontak Kami</h2>
             <p>Email: selvianaputri2008@gmail.com</p>
             <p>Telepon: 0812-3456-7890</p>
@@ -50,7 +52,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('wllperlanding') no-repeat center center fixed; 
+    background: url('wallpaper.jpg.jpg') no-repeat center center fixed; 
     background-size: cover;
 }
 header {

@@ -13,10 +13,8 @@ $cek = mysqli_num_rows($login);
 if($cek > 0){
 
     $data = mysqli_fetch_assoc($login);
-
     // cek jika user login sebagai admin
     if($data['role']=="admin"){
-
         // buat session login dan username 
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;
@@ -41,5 +39,4 @@ if($cek > 0){
 }else{
     header("location:home.php");   
 }
-
 ?>

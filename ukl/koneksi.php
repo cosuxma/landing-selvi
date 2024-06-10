@@ -1,17 +1,15 @@
 <?php
-// isi nama host, username mysql, dan password mysql anda
+// Database connection details
 $databaseHost = "localhost";
-$databaseName = "pengolahan makanan";
+$databaseName = "pengolahanmakanan";
 $databaseUsername = "root";
-$databasepassword = "";
+$databasePassword = "";
 
-$mysqli = mysqli_connect($databaseHost, $databaseUsername, $databasepassword, $databaseName);
+// Establish connection
+$mysqli = new mysqli($databaseHost, $databaseUsername, $databasePassword, $databaseName);
 
-//$host = mysqli_connect("localhost", "root", "");
-
-if($mysqli){
-    ("koneksi berhasil" . mysqli_connect_error());
-}else{
-    "koneksi gagal";
-}
+// Check connection
+if ($mysqli->connect_error) {
+    die("Koneksi database gagal: " . $mysqli->connect_error);
+} 
 ?>

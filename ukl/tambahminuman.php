@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Edit User</title>
+    <title>Tambah Data Minuman</title>
     <style>
         .form-container {
             display: flex;
@@ -16,7 +16,8 @@
             border-radius: 10px;
             background-color: #FAEBD7;
         }
-        .form-container form input {
+        .form-container form input,
+        .form-container form textarea {
             margin: 10px 0;
             padding: 10px;
             width: 100%;
@@ -59,40 +60,41 @@
 <?php
 include 'koneksi.php';
 
-if (isset($_GET['id'])) {
-    $id = $_GET['id'];
-    $result = mysqli_query($mysqli, "SELECT * FROM user WHERE id_user=$id") or die(mysqli_error());
-    $data = mysqli_fetch_array($result);
-}
+if (isset($_POST['submit'])) {
+    $nama_minuman = $_POST['nama_minuman'];
+    $asal_minuman = $_POST['asal_minuman'];
+    $deskripsi = $_POST['deskripsi'];
+    $foto = $_POST['foto'];
+    $harga = $_POST['harga_minuman'];
 
-if (isset($_POST['update'])) {
-    $id = $_POST['id_user'];
-    $username = $_POST['username'];
-    $email = $_POST['email'];
+    $insert = mysqli_query($mysqli, "INSERT INTO minuman (nama_minuman, asal_minuman, deskripsi, foto, harga_minuman) VALUES ('$nama_minuman', '$asal_minuman', '$deskripsi', '$foto', '$harga')") or die(mysqli_error($mysqli));
 
-    $update = mysqli_query($mysqli, "UPDATE user SET username='$username', email='$email' WHERE id_user=$id") or die(mysqli_error());
-
-    if ($update) {
-        header("Location: tabeluser.php");
+    if ($insert) {
+        header("Location: dataminuman.php");
+        exit();
     } else {
-        echo "Failed to update data!";
+        echo "Gagal menambahkan data!";
     }
 }
 ?>
 
 <div class="form-container">
-    <form method="POST" action="edituser.php">
-        <input type="hidden" name="id_user" value="<?php echo $data['id_user']; ?>">
-        <label>Username:</label>
-        <input type="text" name="username" value="<?php echo $data['username']; ?>" required>
-        <label>Email:</label>
-        <input type="email" name="email" value="<?php echo $data['email']; ?>" required>
-        <button type="submit" name="update">Update</button>
+    <form action="tambahdataminuman.php" method="POST">
+        <label>Nama Minuman:</label>
+        <input type="text" name="nama_minuman" required>
+        <label>Asal:</label>
+        <input type="text" name="asal_minuman" required>
+        <label>Deskripsi:</label>
+        <textarea name="deskripsi" required></textarea>
+        <label>Foto:</label>
+        <input type="text" name="foto" required>
+        <label>Harga:</label>
+        <input type="text" name="harga_minuman" required>
+        <button type="submit" name="submit">Tambah</button>
+        <a href="dataminuman.php"></a>
     </form>
     <div class="back-button">
-        <a href="tabeluser.php">Back to user table</a>
-        <a href="tabeluser.php">Next to makanan table</a>
-        <a href="tabeluser.php">Next to minuman table</a>
+        <a href="dataminuman.php">Kembali ke Tabel Makanan</a>
     </div>
 </div>
 
